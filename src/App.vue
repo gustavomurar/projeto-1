@@ -1,28 +1,45 @@
 <script setup>
- import { ref } from 'vue';
+import {ref} from 'vue'
 
-const nome = ref('');
+const titulo = ref('Título')
 </script>
 
 <template>
-  <h1>Formulário de inscrição:</h1>
-
-  <div class="infos">
-    <p>Nome: {{ nome }} </p>
+  <h1>{{ titulo }}</h1>
+  <div class="contanier">
+    <div class="formulario">
+      <h2>Formulário</h2>
+      <imput type="text" v-model="titulo"/>
+    </div>
+    <div class="resultado">
+      <h2>Resultado</h2>
+    </div>
   </div>
 </template>
 
 <style scoped>
-.info {
-  background-color: rgb(199, 0, 86);
-  padding: 20px 30px;
-  color: rgb(0, 191, 255);
+
+.contanier{
+display: flex;
+flex-direction: row;
+justify-content: center;
+gap: 1.5rom;
+width: 100w;
+
+}
+.formulario,
+.resultado {
+  background-color:black;
+  width: 45%;
   border-radius: 10px;
+  padding: 10px;
 }
 
-h1 {
-  color: rgb(0, 0, 0);
-  font-weight: bold;
-  font-size: 1.5em;
+.formulario{
+  background-color:crimson;
+}
+
+.resultado{
+  background-color:bisque;
 }
 </style>
